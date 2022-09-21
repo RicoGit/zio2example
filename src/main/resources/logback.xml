@@ -1,0 +1,39 @@
+<!--<configuration>-->
+<!--    &lt;!&ndash; Configure the Console appender &ndash;&gt;-->
+<!--    <appender name="TestAppender" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--&lt;!&ndash;        <encoder class="net.logstash.logback.encoder.LogstashEncoder">&ndash;&gt;-->
+<!--&lt;!&ndash;            <fieldNames>&ndash;&gt;-->
+<!--&lt;!&ndash;                <level>severity</level>&ndash;&gt;-->
+<!--&lt;!&ndash;            </fieldNames>&ndash;&gt;-->
+<!--&lt;!&ndash;            <includeStructuredArguments>false</includeStructuredArguments>&ndash;&gt;-->
+<!--&lt;!&ndash;            <includeNonStructuredArguments>false</includeNonStructuredArguments>&ndash;&gt;-->
+<!--&lt;!&ndash;            <provider class="com.whisk.util.logging.WhiskArgumentsJsonProvider"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        </encoder>&ndash;&gt;-->
+<!--    </appender>-->
+
+<!--    <logger name="io.netty.util" level="TRACE"/>-->
+
+<!--    <root level="DEBUG">-->
+<!--        <appender-ref ref="TestAppender"/>-->
+<!--    </root>-->
+<!--</configuration>-->
+
+
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+
+    <logger name="io.netty.util.NetUtil" level="TRACE"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
